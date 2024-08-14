@@ -8,6 +8,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   color: var(--seashell);
+  font-family:Helvetica,sans-serif;
 }
 
 header {
@@ -17,24 +18,26 @@ header {
   left: 0;
   right: 0;
   padding: 0 10px;
-  border: 1px solid var(--seashell);
+  border-bottom: 1px solid var(--seashell);
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+  z-index:1;
+  background-color: var(--black);
 }
 
 .header__logo {
   height: 50px;
 }
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: space-evenly;
-  border: 1px solid red;
   max-width: 500px;
   width: 100%;
 }
@@ -46,9 +49,11 @@ a {
   text-decoration: underline;
   cursor: pointer;
 }
+
 li {
   text-align: center;
 }
+
 main,
 footer {
   padding: 0 20px;
@@ -57,22 +62,100 @@ footer {
 
 main {
   margin-top: 50px;
+  min-height: 44rem;
 }
 
-@media screen and (max-width:500px) {
-    header {
-        flex-flow:column;
-        align-items:center;
-        justify-content:center;
-    }
-    main{
-        margin-top:5rem;
-    }
+.section__mission {
+    position: relative;
+    min-height: 44rem;
+    background-image: url("assets/pictures/img-mission-background.jpg");
+    background-size: cover;
+  }
+
+.content__mission {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  width: 100%;
+  background-color:var(--black);
+  margin: 0;
 }
 
-@media screen and (max-width:400px) {
-    
-    main{
-        margin-top:6.5rem;
-    }
+.section__feature-tea{
+  max-width: 1000px;
+  width:100%;
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  position: relative;
+  left:50%;
+  transform:translateX(-50%);
 }
+
+.contents__feature-tea{
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-evenly;
+}
+
+.content__feature-tea img{
+  width:19rem;
+  height:12.5rem;
+}
+
+.section__locations{
+  width:100%;
+  min-height:31rem;
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+  background-image:url("assets/pictures/img-locations-background.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content:center;
+}
+
+.contents__locations {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content:space-around;
+}
+
+.content__location{
+  width: 19rem;
+  height: 12.5rem;
+  background-color:var(--black);
+}
+.content__location h3,h4{
+  opacity:0.8;
+}
+
+.section__information{
+  min-height:12.5rem;
+  text-align:center;
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+  main {
+    margin-top: 5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  main {
+    margin-top: 6.5rem;
+  }
+}
+
